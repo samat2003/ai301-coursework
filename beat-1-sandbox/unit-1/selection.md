@@ -77,6 +77,7 @@ Quote source text directly in each field below. Paraphrase does not satisfy them
 **Run history**
 
 - Run 1: 20/20
+- Run 2: 20/20
 
 **Issue analysis**
 
