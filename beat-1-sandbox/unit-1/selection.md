@@ -19,7 +19,6 @@ https://github.com/codepath/pathreview-ai301-fa26-s1/issues/68
 
 **Verdict output**
 
-```
 Ranked Candidates:
 1. https://github.com/codepath/pathreview-ai301-fa26-s1/issues/68
    Fit reason: Tier-1 starter bug in Python RAG retriever with clear repro steps and specific test files named.
@@ -65,7 +64,6 @@ Checks:
     "verdict": "accept"
   }
 ]
-```
 ```
 
 ---
