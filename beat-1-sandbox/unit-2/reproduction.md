@@ -15,8 +15,7 @@ label is not graded.
 
 **GitHub username**
 
-[Your GitHub username, exactly as it appears on your profile — no `@`, no profile URL. Your
-comments upstream are identified by this name.]
+samat2003
 
 ---
 
@@ -42,28 +41,23 @@ fields.
 
 **Run history**
 
-[The agreement score of each run you did, in order. A single run is a complete answer if
-only one run occurred. **The last score in your list must match the agreement line in the
-`eval-run.txt` you committed** — that file is the record of your final run.]
+1. Initial full Codex run: 18/20; category floor satisfied; disagreements were `pkg-05` and `pkg-09`.
+2. Targeted run `pkg-07,pkg-12`: 2/2.
+3. Confirming full Codex run: 18/20. The committed transcript records: `agreement: 18/20 scored items  (bar: 18/20: PASS)`.
+
+The final run's category line is: `categories: clear-accept 6/8  disclosure 1/1  no-evidence 4/4  unfollowable-comms 3/3  wrong-target 4/4`.
 
 **Package analysis**
 
-[Pick one scored package (`pkg-01` through `pkg-20` — the four `calib-` packages are never
-scored). Name it by id, say what your rubric decided and what the gold label said, and
-explain why your rubric read it that way.]
+`pkg-05`: gold label `accept`; my rubric verdict `reject`. The eval output says: "Report only says it wrote a minimal env.yml with dependencies and category, but does not provide the env.yml contents or the issue's exact URL/input." That fails `steps-followable`: without the YAML contents and exact URL/input, another person cannot recreate the tested state. The final run records `pkg-05  accept  reject   NO     failed: steps-followable`.
 
 **Check rationale**
 
-[Quote one check from the `rubric.md` you uploaded to `tools/repro-check/`, exactly as it reads now.
-Then say why it reads that way — what you revised to get there, or what you rejected in
-favour of it.]
+The `steps-followable` check says: "A stranger can recreate the tested state and perform the trigger from the posted package, including an exact input already shown in the issue and clearly referenced by the report." I kept that requirement because the `pkg-05` eval evidence identifies missing inputs as the reason the attempt cannot be rerun; a plausible result alone does not make the steps reproducible.
 
 **Trade-offs**
 
-[Every check gives something up. Any one of these is a complete answer: a package whose
-result it changes, a canary you re-ran with `--only`, a case you accept it will miss, or a
-stated reason nothing changed elsewhere. "Nothing changed, and here is how I know" earns
-the point in full when the reason follows.]
+The strict input requirement changes the result for `pkg-05`: its gold label is `accept`, while my rubric rejected it because the env.yml contents and exact issue URL/input were omitted. In the targeted `pkg-07,pkg-12` run, both agreed (2/2); the final full run also records `pkg-07  accept  accept   yes` and `pkg-12  accept  accept   yes`.
 
 ---
 
